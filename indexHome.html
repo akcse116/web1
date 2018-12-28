@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+            H   H  EEEEE    A    DDDD
+            H   H  E       A A   D   D
+            HHHHH  EEEE   A   A  D   D
+            H   H  E      A A A  D   D
+            H   H  EEEEE  A   A  DDDD
+-->
+
+  <head>
+    <!--  color palette source -- http://paletton.com/#uid=7120u0kw0w0jvDaoOy4y4oODajv  -->
+    
+    <!-- TITLE INFO -->
+    <title>HOME - Launch-HUB</title>
+    <!--  TITLE ICON -->
+    <link rel="icon" type="icon" href="/tabimg" sizes="32x32" />
+    <!-- Required BOOT meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="">
+    <meta name="description" content="Quick access to info regarding SpaceX missions, rockets, events!"/>
+    <meta name="keywords" content="rocket, launch, spacex, space travel, space, mission, exploration, science, technology, engineering, aerospace"/>
+    <meta name="author" content="Alex Kogan">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Plotly REF -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+    <!-- Page JAVASCRIPT REF -->
+    <script src="/charts"></script>
+    
+    <!-- CSS -->
+    <style>
+        body {
+            text-align: center;
+            background-image: url("http://getwallpapers.com/wallpaper/full/6/e/a/43313.jpg");
+        }
+        a:hover {
+            color: #FFDB00;
+            text-decoration:none;
+        }
+        hr {
+        border: 0;
+        margin: 5%;
+    }
+        #main {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        
+        body, h2 {color: #f2f2f2;}
+        
+        h3 {
+            color: #f2f2f2;
+            
+            border-radius: 6px;
+            opacity: 1.0;
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            font-family: helvetica;
+        }
+        h1 {
+            
+            width: 70%;
+            border-radius: 6px;
+            margin: auto;
+            color: white;
+            text-align: center;
+            font-family: arial, helvetica;
+            
+        }
+        .tframe {
+            margin: auto;
+            width: 75%;
+            padding: .2%;
+            background-color: white;
+            border-radius: 4px;
+        }
+        p {
+            color: white;
+            background-color: #001a33;
+            font-size: 60%;
+            width: 100%;
+            opacity: 1.0;
+            text-align: center;
+            font-family: arial, helvetica;
+            margin: auto;
+            padding: .2%;
+            border-radius: 4px;
+        }
+        #banner {
+            background-color: black;
+            border-radius: 15px;
+            width: 90%;
+            margin: auto;
+            color: white;
+            text-align: center;
+            font-family: arial, helvetica;
+        }
+        div {
+            height: 20%;
+            font-size: 180%;
+            color: white;
+            text-align: center;
+            font-family: helvetica;
+        }
+        #title_trim {
+            background-color: #ffb200;
+            width: 50%;
+            border-radius: 15px;
+            margin: auto;
+            padding: .5%;
+        }
+        .btn {
+            background-color: #CEB5FF;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 70%;
+            margin: 1% 2%;
+        }
+        .btn-info{background-color: #0000ff;} /* Blue */
+        .btn-info2 {background-color: #FF0000;} /* Red */ 
+        .pframe {
+            margin: auto;
+            width: 90%;
+            padding: .2%;
+            background-color: white;
+            border-radius: 4px;
+        }
+        img, rocket { 
+            width: 100%; 
+            
+        }
+        #logo {
+            width: 50%;
+            padding: 3%;
+            margin: 0; 
+        }
+        #menu {
+            background-color: #001a33;
+            border-radius: 15px;
+            font-size: 120%;
+            color: white;
+            display:block;
+            float: none;
+            padding: 1%;
+            margin: 2%;
+        }
+        nav {
+            display: block;
+            text-transform:uppercase;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .frame {
+            padding: .4%;
+            background-color: #ffb200;
+            border-radius: 6px;
+        }
+        .trim {
+            padding: .4%;
+            background-color: #4312AE;
+            border-radius: 6px;
+        }
+        .chart {
+            border-radius: 15px;
+        }
+        footer {
+            padding:3%;
+            font-size: 150%;
+            background-color:#001a33;
+            border-top:2%;
+            border-color:#ffb200;
+        }
+        .active {
+            color: #fbb200;
+        }
+        .active:hover {
+            color: #FFDB00;
+        }
+    </style>
+  </head>
+  
+<!--
+            H   H  EEEEE    A    DDDD
+            H   H  E       A A   D   D
+            HHHHH  EEEE   A   A  D   D
+            H   H  E      A A A  D   D
+            H   H  EEEEE  A   A  DDDD
+-->
+
+<!-- 
+            BBBB    OOO   DDDD   Y   Y
+            B   B  O   O  D   D   Y Y
+            BBBB   O   O  D   D    Y
+            B   B  O   O  D   D    Y  
+            BBBB    OOO   DDDD     Y  
+-->
+  
+  <body onload='upcoming_table(); latest_table(); past_table();'>
+    <div id="main">
+        <header>
+            <div id="logodiv">
+                <a href="/"><img src="/LHlogo" id="logo"></a>
+            </div>
+                   
+            <div id="menu">
+                <nav>
+                    <table>
+                        <tr>
+                            <b><a class="active" href="/"> home  </a>|  <a href="LH">all launches  </a>|  <a href="/failed_page">failed launches  </a>|  <a href="/info">more info  </a>|<a href="/about">  about </a></b>
+                        </tr>
+                    </table>
+                </nav>
+            </div>
+        </header> 
+        <hr>
+        <div class="tframe">
+        <p>Providing up to date information regarding SpaceX missions.<br>Past and future launch data and detail are listed as they become available.</p>
+        </div>
+        <hr>
+        <div id="charts">
+        <div id="title_trim">
+        <h1 id="banner">LATEST LAUNCH</h1>
+        </div>
+        <hr>
+        <h3>Get up to speed with the latest event.<br>Below are details of the lastest SpaceX launch.</h3>
+        <div class="frame">
+        <div class="trim">
+        <div id='latest_chart' class="chart"></div>
+        </div>
+        </div>
+        <hr>
+        <hr>
+        <h1>UPCOMING LAUNCHES</h1>
+        <div class="frame">
+        <div class="trim">
+        <div id='upcoming_chart' class="chart"></div>
+        </div>
+        </div>
+        <hr>
+        <hr>
+        <h1>PAST LAUNCHS</h1>
+        <h3>For the full launch history see the <a href="LH">"ALL LAUNCHES"</a> page</h3>
+        <div class="frame">
+        <div class="trim">
+        <div id="past_chart" class="chart"></div>
+        </div>
+        </div>
+        </div>
+        <hr>
+        <div class="pframe">
+        <img id="rocket" src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.trbimg.com%2Fimg-5a7a877e%2Fturbine%2Fct-spacex-falcon-heavy-rocket-launch-20180206&f=1" alt="rocket launch">
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <a href="#logo">Back To Top ^</a>
+    </footer>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+  </body>
+
+<!-- 
+            BBBB    OOO   DDDD   Y   Y
+            B   B  O   O  D   D   Y Y
+            BBBB   O   O  D   D    Y
+            B   B  O   O  D   D    Y  
+            BBBB    OOO   DDDD     Y  
+-->
+
+</html>
