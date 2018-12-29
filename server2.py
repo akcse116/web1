@@ -61,7 +61,7 @@ def logo():
 
 @route('/tabimg')
 def favicon():
-    return static_file("favicon_sat.png", root='')
+    return static_file("LH favicon.png", root='')
 
 
 @route('/charts')
