@@ -48,6 +48,11 @@ def get_permission():
     return static_file("robots", root='')
 
 
+@route('/sitemap')
+def get_sitemap():
+    return static_file("sitemap.xml", root='')
+
+
 # ********** END INDEXES **********
 
 
