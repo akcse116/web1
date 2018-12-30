@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+
+sitemap: http://occupylaunchhub.com/sitemap
  
 # user: elon 
 # pass: bfr 
