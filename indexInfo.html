@@ -103,25 +103,22 @@
     }
     
     #logo {
-        width: 50%;
-        padding: 3%;
+        width: 40%;
         margin: 0; 
     }
     
     #menu {
-            background-color: black;
-            border-radius: 15px;
-            font-size: 120%;
-            color: white;
-            display:block;
-            float: none;
-            padding: 1%;
-            margin: 2%;
-            width: 100%;
+        background-color: #001a33;
+        color: white;
+        padding: .6%;
+    }
+    .menubtn {
+        margin: auto;
+        padding: 2.5%;
     }
     nav {
-        display: block;
-        
+        float: none;
+        font-size:80%;
     }
     a {
         color: inherit;
@@ -146,10 +143,21 @@
         text-align: center;
         font-family: helvetica;
     }
-    .active {
+    header {
+        background: #001a33;
+        border-bottom: 2px solid #ffb200;
+    }
+    footer {
+        padding:3%;
+        font-size: 150%;
+        background-color:#001a33;
+        border-top:2%;
+        border-color:#ffb200;
+    }
+    #active {
         color: #fbb200;
     }
-    .active:hover {
+    #active:hover {
         color: #FFDB00;
     }
     </style>
@@ -172,30 +180,36 @@
 -->
 
   <body>
-    <div id="main">
-    <div id="logodiv">
-    <a href="/"><img src="LHlogo" id="logo"></a>
-    </div>
+    <header>
+        <div id="logodiv">
+            <a href="/"><img src="LHlogo" id="logo"></a>
+        </div>
     <div id="menu">
-    <nav>
-        <table>
-        <tr>
-        <b><a href="/"> HOME  </a>|  <a href="LH">ALL LAUNCHES  </a>|  <a href="/failed_page">FAILED LAUNCHES  </a>|  <a class="active" href="/info">MORE INFO  </a>|<a href="/about">  ABOUT </a></b>
-        </tr>
-        </table>
-    </nav>
+        <nav>
+            <table>
+                <tr>
+                    <b><a href="/" class="menubtn"> HOME  </a>  <a href="LH" class="menubtn">ALL LAUNCHES  </a>  <a href="/failed_page" class="menubtn">FAILED LAUNCHES  </a>  <a id="active" href="/info" class="menubtn">MORE INFO  </a><a href="/about" class="menubtn">  ABOUT </a></b>
+                </tr>
+            </table>
+        </nav>
     </div>
+    </header>
+    <hr>
+    <div id="main">
     <div id="title_trim">
-    <h1>More Info</h1>
+        <h1>More Info</h1>
     </div>
     <hr>
     <div id="temp">
-    <h2>Want to know more about SpaceX?</h2>
-    <h2>-Coming Soon-</h2>
+        <h2>Want to know more about SpaceX?</h2>
+        <h2>-Coming Soon-</h2>
     </div>
-        
+    <hr> 
     </div>
-    
+    <hr>
+    <footer>
+        <a href="#logo">Back To Top ^</a>
+    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
