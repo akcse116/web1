@@ -83,7 +83,12 @@
         font-family: arial, helvetica;
         font-size: 83%;
     }
-    
+    p {
+        color: white;
+        font-size: 100%;
+        font-family: arial, helvetica;
+        padding: .5%;
+    }
     #banner {
         background-color: black;
         border-radius: 15px;
@@ -136,14 +141,7 @@
         width: 100%; 
         
     }
-    p{
-        background-color: black;
-        color: white;
-        font-size: 280%;
-        font-family: helvetica;
-        padding: 0;
-        margin: 5%;
-    }
+    
     #logo {
         width: 50%;
         padding: 3%;
@@ -192,6 +190,11 @@
     .active:hover {
         color: #FFDB00;
     }
+    .intro {
+        background-color: #0d0d0d;
+        border-radius: 6px;
+        padding: 0;
+    }
     </style>
   </head>
   
@@ -230,15 +233,19 @@
     <h1 id="banner">SpaceX launch history</h1>
     </div>
     <hr>
-    <h2>FULL HISTORY</h2>
-    <h3>The full history of all SpaceX missions starting from number 1</h3>
+    <hr>
+    <p class="intro">Bellow you can view the full history of all SpaceX missions starting from number one.</p>
+    <p><a href="#skip_1">Click to skip to statistics</a></p>
     <div class="frame">
         <div class="trim">
             <div id="allPast_chart" style="width:1196px;height:3700px"></div>
         </div>
     </div>
+    <hr id="skip_1">
+    <h2>Statistics Data</h2>
     <hr>
-    <h2>Statistical Info</h2>
+    <p>Mission launch site utilizaion percentage of use</p>
+    
     <div id="pie">
     <div id="site_pie_chart"></div>
     </div>
