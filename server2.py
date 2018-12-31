@@ -45,7 +45,7 @@ def get_indexInfo():
 
 @route('/robots.txt')
 def get_permission():
-    return static_file("robots", root='')
+    return static_file("robots.txt", root='')
 
 
 @route('/sitemap')
