@@ -39,10 +39,11 @@
             color: #FFDB00;
             text-decoration:none;
         }
+        
         hr {
-        border: 0;
-        margin: 5%;
-    }
+            border: 0;
+            margin: 5%;
+        }
         #main {
             width: 80%;
             margin: auto;
@@ -137,25 +138,27 @@
             
         }
         #logo {
-            width: 50%;
-            padding: 3%;
+            width: 40%;
+            padding: 0;
             margin: 0; 
         }
         #menu {
             background-color: #001a33;
-            border-radius: 15px;
-            font-size: 120%;
             color: white;
-            display:block;
-            float: none;
-            padding: 1%;
-            margin: 2%;
+            padding: .6%;
+        }
+        .menubtn {
+            margin: auto;
+            padding: 2.5%;
         }
         nav {
-            display: block;
+            float: none;
+            font-size:80%;
             text-transform:uppercase;
         }
         a {
+            padding: 0;
+            margin: 0;
             color: inherit;
             text-decoration: none;
         }
@@ -172,17 +175,21 @@
         .chart {
             border-radius: 15px;
         }
+        header {
+            background: #001a33;
+            border-bottom: 2px solid #ffb200;
+        }
         footer {
             padding:3%;
             font-size: 150%;
             background-color:#001a33;
-            border-top:2%;
+            border-top:2px solid #ffb200;
             border-color:#ffb200;
         }
-        .active {
+        #active {
             color: #fbb200;
         }
-        .active:hover {
+        #active:hover {
             color: #FFDB00;
         }
     </style>
@@ -205,7 +212,6 @@
 -->
   
   <body onload='upcoming_table(); latest_table(); past_table();'>
-    <div id="main">
         <header>
             <div id="logodiv">
                 <a href="/"><img src="/LHlogo" id="logo"></a>
@@ -215,12 +221,13 @@
                 <nav>
                     <table>
                         <tr>
-                            <b><a class="active" href="/"> home  </a>|  <a href="LH">all launches  </a>|  <a href="/failed_page">failed launches  </a>|  <a href="/info">more info  </a>|<a href="/about">  about </a></b>
+                            <b><a id="active" class="menubtn" href="/">home</a><a class="menubtn" href="LH">all launches</a><a class="menubtn" href="/failed_page">failed launches</a><a class="menubtn" href="/info">more info</a><a class="menubtn" href="/about">about</a></b>
                         </tr>
                     </table>
                 </nav>
             </div>
-        </header> 
+        </header>
+        <div id="main">
         <hr>
         <div class="tframe">
         <p>Providing up to date information regarding SpaceX missions.<br>Past and future launch data and detail are listed as they become available.</p>
