@@ -4,7 +4,8 @@ import json
 import bottle
 import launches
 import input_handling
-from bottle import route, post, run, static_file, request, redirect
+from hitCounter import count
+from bottle import route, post, run, static_file, request, redirect, error
 
 # *****************************************************
 # ***********************VARIABLES*********************
@@ -20,6 +21,7 @@ url4 = "https://api.spacexdata.com/v3/launches/latest"
 
 @route('/')
 def get_index():
+    count()
     return static_file("indexHome.html", root='')
 
 
@@ -51,6 +53,11 @@ def get_permission():
 @route('/sitemap')
 def get_sitemap():
     return static_file("sitemap.xml", root='')
+
+
+@error(404)
+def error404(error):
+    return '404 Nothing here. Have you seen this page?'
 
 
 # ********** END INDEXES **********
@@ -113,11 +120,10 @@ def get_site_count():
 
 @post('/about')
 def do_submit():
-    print('confirmed')
     content = request.forms.get('email')
     input_handling.add_email(content)
     redirect('/about')
-
+    return "Confirmed"
 
 # ********** BOTTLE RUN **********
 
