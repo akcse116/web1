@@ -1,4 +1,4 @@
-filename = "hit_log.txt"
+filename = "../hit_log.txt"
 
 
 def count():
