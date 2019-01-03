@@ -68,7 +68,7 @@ def error404(error):
 
 @route('/LHlogo')
 def logo():
-    return static_file("LHlogo.png", root='')
+    return static_file("LHlogo.png", root='FRONT/')
 
 
 @route('/tabimg')

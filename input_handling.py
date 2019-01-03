@@ -1,4 +1,4 @@
-filename = "subscribers.txt"
+filename = "../subscribers.txt"
 
 
 def add_email(input):
