@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+            H   H  EEEEE    A    DDDD
+            H   H  E       A A   D   D
+            HHHHH  EEEE   A   A  D   D
+            H   H  E      A A A  D   D
+            H   H  EEEEE  A   A  DDDD
+-->
+
+  <head>
+    <!-- TITLE INFO -->
+    <title>Launch hub - Contact Form</title>
+    <link rel="icon" type="icon" href="/tabimg" sizes="32x32" /><!--  TITLE ICON -->
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="">
+    <meta name="description" content="About Launch-hub. Sign up to receive news updates! Launch hub provides quick access to info regarding SpaceX missions, rockets, events! Don't miss a launch! Stay up to date with scheduled launch missions.">
+    <meta name="keywords" content="rocket, launch, spacex, space travel, space, spacex missions, mission, exploration, science, technology, engineering, aerospace, falcon, bfr, info, about, sign-up">
+
+    
+    <!-- CSS -->
+    <style>
+    body {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: auto;
+        text-align: center;
+        font-family: ariel, helvetica;
+        background-image: url("http://getwallpapers.com/wallpaper/full/6/e/a/43313.jpg");
+    }
+    #container {
+        overflow: hidden;
+		min-height:100%;
+		position: relative;
+		margin: 0;
+		padding: 0;
+	}
+    a:hover {
+        color: #FFDB00;
+        text-decoration: none;
+    }
+    hr {
+        border: 0;
+        margin: 5%;
+    }
+   
+    #logo {
+        width: 40%;
+        margin: 0; 
+    }
+    #logo_mini {
+        width: 40%;
+    }
+    #menu {
+        background-color: #001a33;
+        color: white;
+        padding: .6%;
+        margin: 0;
+    }
+    .menubtn {
+        margin: 0;
+        padding: 2.5%;
+    }
+    nav {
+        float: none;
+        font-size:80%;
+        text-transform:uppercase;
+        margin: 0;
+    }
+    a {
+        padding: 0;
+        margin: 0;
+        color: inherit;
+        text-decoration: none;
+    }
+    header {
+        width: 100%;
+        height: 20%;
+        font-size: 180%;
+        background-color: #001a33;
+        border-bottom: 2px solid #ffb200;
+    }
+    
+    footer {
+        width: 100%;
+        height: 30%;
+        border-top: 2px solid #fbb200;
+        font-size: 150%;
+        color: #ffffff;
+        background: linear-gradient(#001a33, #000000);
+        opacity:0.9;
+        position: absolute;
+    }
+    #active {
+        color: #fbb200;
+    }
+    #active:hover {
+        color: #FFDB00;
+    }
+    #logodiv {
+        margin: 0;
+        padding: 0;
+    }
+    #contact {
+        width: 70%;
+        color: #ffffff;
+        padding: 1%;
+        margin: auto;
+    }
+    input {
+        margin: 1%;
+    }
+    .large {
+        width: 28%;
+        padding-bottom: 5%;
+        height: 20%;
+    }
+    legend {
+        font-size: 150%;
+    }
+    div {
+        padding: 0;
+        margin: 0;
+    }
+    </style>
+  </head>
+<!-- 
+            BBBB    OOO   DDDD   Y   Y
+            B   B  O   O  D   D   Y Y
+            BBBB   O   O  D   D    Y
+            B   B  O   O  D   D    Y  
+            BBBB    OOO   DDDD     Y  
+-->
+
+  <body>
+    <div id="container">
+    <header>
+        <div id="logodiv">
+            <a href="/"><img src="LHlogo" id="logo"></a>
+        </div>
+        <div id="menu">
+            <nav>
+                <table>
+                    <tr>
+                        <b><a class="menubtn" href="/">home</a><a class="menubtn" href="LH">all launches</a><a class="menubtn" href="/failed_page">failed launches</a><a class="menubtn" href="/info">more info</a><a class="menubtn" href="/about">about</a></b>
+                    </tr>
+                </table>
+            </nav>
+        </div>
+    </header>    
+    <hr>
+    <div id="contact">
+        <form method="post" action="/contact">
+            <legend><strong>Contact Us:</strong></legend>
+            <hr>
+            Name: (Optional)<br>
+            <input class="small" type="text" name="name" placeholder="Optional" maxlength="60" size="60"><br>
+            * Email:<br>
+            <input class="small" type="email" name="email" placeholder="Required" maxlength="60" size="60" required><br>
+            * Message:<br>
+            <textarea class="large" type="textarea" name="message" placeholder="Enter message." cols="40" rows="10" required></textarea><br>
+            <input type="submit" value="Submit"> 
+        </form>
+    </div>
+    <hr>
+    <div>
+        <footer>
+            <a href="#logo">Back To Top ^</a>
+            <p>Copyright &copy; 2018</p>
+        </footer>
+    </div>
+    </div>
+  </body>
+</html>

@@ -45,6 +45,11 @@ def get_indexInfo():
     return static_file("indexInfo.html", root='')
 
 
+@route('/contact')
+def get_contact():
+    return static_file("contact.html", root='')
+
+
 @route('/robots.txt')
 def get_permission():
     return static_file("robots.txt", root='')
@@ -79,6 +84,7 @@ def favicon():
 @route('/charts')
 def graphes():
     return static_file("charts.js", root='')
+
 
 # ********** END SUPPORT FILES **********
 
@@ -124,6 +130,16 @@ def do_submit():
     input_handling.add_email(content)
     redirect('/about')
     return "Confirmed"
+
+
+@post('/contact')
+def do_submit2():
+    name = request.forms.get('name')
+    email = request.forms.get('email')
+    message = request.forms.get('message')
+    redirect('/')
+    return "Confirmed"
+
 
 # ********** BOTTLE RUN **********
 
