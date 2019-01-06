@@ -81,24 +81,23 @@
         font-size: 180%;
         color: white;
         text-align: center;
-        font-family: helvetica;
+        font-family: arial,helvetica;
     }
     #cont1 {
         background-color: black;
     }
-    .btn {
-        background-color: #CEB5FF;
-        border: none;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 70%;
-        margin: 1% 2%;
+    #cbtn {
+        font-size: 75%;
+        padding: 1%;
+        margin: .5%;
+        background-color: #000000;
+        color: #00ff00;
+        font-family: arial, halvetica;
     }
-    .btn-info{background-color: #0000ff;} /* Blue */
-    .btn-info2 {background-color: #FF0000;} /* Red */ 
-    
+    #cbtn:hover {
+        background-color: #ffb200;
+        color: #ffffff;
+    }
     img { 
         width: 75%; 
         margin: 3% 5%;
@@ -232,6 +231,7 @@
             the way SpaceX inspires us.<br>We will continue to expand and improve our service. 
             Feel free to contact us, we welcome your feedback.
             </p>
+            <button id="cbtn" onclick="window.location.href='https://occupylaunchhub.com/contact'">CONTACT</button>
             </div>
         </div>
     </div>

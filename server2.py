@@ -4,6 +4,7 @@ import json
 import bottle
 import launches
 import input_handling
+import mail_sender
 from hitCounter import count
 from bottle import route, post, run, static_file, request, redirect, error
 
@@ -137,7 +138,8 @@ def do_submit2():
     name = request.forms.get('name')
     email = request.forms.get('email')
     message = request.forms.get('message')
-    redirect('/')
+    mail_sender.sendmail(mail_sender.msg_builder(name, email, message))
+    redirect('/about')
     return "Confirmed"
 
 
