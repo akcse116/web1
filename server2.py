@@ -77,6 +77,11 @@ def logo():
     return static_file("LHlogo.png", root='FRONT/')
 
 
+@route('/pageBG')
+def background():
+    return static_file("spaceBackground.jpg", root='FRONT/')
+
+
 @route('/tabimg')
 def favicon():
     return static_file("LH favicon.png", root='')
