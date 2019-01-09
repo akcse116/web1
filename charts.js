@@ -146,13 +146,20 @@ function get_vals_upcoming(json){
                 height: 30,
                 line: {color: "black", width: 4},
                 fill: {color: "#666699"},
-                font: {family: "Arial", size: 12, color: ["white"]}
+                font: {family: "Arial", size: 14, color: ["white"]}
             }
         }],
         layout: {
             title: 'Next 10 Launches',
             autosize: true,
-            height: 840,
+            height: 740,
+            margin: {
+                l: 10,
+                r: 10,
+                b: 10,
+                t: 50,
+                pad: 0
+            },
             paper_bgcolor: '#000000',
             plot_bgcolor: '#000000'
         }
@@ -182,13 +189,20 @@ function get_vals_past(json){
                 height: 30,
                 line: {color: "black", width: 4},
                 fill: {color: "#666699"},
-                font: {family: "Arial", size: 12, color: ["white"]}
+                font: {family: "Arial", size: 14, color: ["white"]}
             }
         }],
         layout: {
             title: 'Last 10 Launches',
             autosize: true,
-            height: 840,
+            height: 740,
+            margin: {
+                l: 10,
+                r: 10,
+                b: 10,
+                t: 50,
+                pad: 0
+            },
             paper_bgcolor: '#000000',
             plot_bgcolor: '#000000'
         }
@@ -216,17 +230,24 @@ function get_vals_latest(json){
             cells: {
                 values: cell_vals,
                 align: "center",
-                height: 30,
+                height: 60,
                 line: {color: "black", width: 4},
                 fill: {color: "#666699"},
-                font: {family: "Arial", size: 12, color: ["white"]}
+                font: {family: "Arial", size: 14, color: ["white"]}
             }
         }],
         layout: {
             title: 'Latest SpaceX Mission',
-            title_color: "white",
+            title_color: "#f2f2f2",
             autosize: true,
-            height: 300,
+            height: 200,
+            margin: {
+                l: 10,
+                r: 10,
+                b: 10,
+                t: 50,
+                pad: 0
+            },
             paper_bgcolor: '#000000',
             plot_bgcolor: '#000000'
         }
@@ -257,13 +278,20 @@ function get_vals_allPast(json){
                 height: 30,
                 line: {color: "black", width: 4},
                 fill: {color: "#666699"},
-                font: {family: "Arial", size: 12, color: ["white"]}
+                font: {family: "Arial", size: 14, color: ["white"]}
             }
         }],
         layout: {
             title: 'Full Launch Mission History     (Scroll to see all)',
             autosize: true,
             height: 3700,
+            margin: {
+                l: 10,
+                r: 10,
+                b: 10,
+                t: 50,
+                pad: 0
+            },
             paper_bgcolor: '#000000',
             plot_bgcolor: '#000000'
         }
@@ -294,13 +322,20 @@ function get_vals_allPast_failed(json){
                 height: 30,
                 line: {color: "black", width: 4},
                 fill: {color: "#666699"},
-                font: {family: "Arial", size: 12, color: ["white"]}
+                font: {family: "Arial", size: 14, color: ["white"]}
             }
         }],
         layout: {
             title: 'Failed Missions',
             autosize: true,
             height: 700,
+            margin: {
+                l: 10,
+                r: 10,
+                b: 10,
+                t: 50,
+                pad: 0
+            },
             paper_bgcolor: '#000000',
             plot_bgcolor: '#000000'
         }
