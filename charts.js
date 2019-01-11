@@ -93,23 +93,7 @@ function all_failed_table(){
 // ********  Supporting Functions ********
 
 function data_sort(raw_data){
-    var result = [ [], [], [], [], [], [], []];
-    for (var x of raw_data){
-        result[0].push(String(x[0]));
-        result[1].push(String(x[1]));
-        result[2].push(String(x[2]));
-        result[3].push(String(x[3]));
-        result[4].push(String(x[4]));
-        result[5].push(String(x[5]));
-        result[6].push(String(x[6]));
-    }
-    return result; 
-}
-
-
-// Sorting for fail table (additional list in result)
-function data_sort_2(raw_data){
-    var result = [ [], [], [], [], [], [], [], []];
+    var result = [ [], [], [], [], [], [], [], [], []];
     for (var x of raw_data){
         result[0].push(String(x[0]));
         result[1].push(String(x[1]));
@@ -119,6 +103,26 @@ function data_sort_2(raw_data){
         result[5].push(String(x[5]));
         result[6].push(String(x[6]));
         result[7].push(String(x[7]));
+        result[8].push(String(x[8]));
+    }
+    return result; 
+}
+
+
+// Sorting for fail table (additional list in result)
+function data_sort_2(raw_data){
+    var result = [ [], [], [], [], [], [], [], [], [], []];
+    for (var x of raw_data){
+        result[0].push(String(x[0]));
+        result[1].push(String(x[1]));
+        result[2].push(String(x[2]));
+        result[3].push(String(x[3]));
+        result[4].push(String(x[4]));
+        result[5].push(String(x[5]));
+        result[6].push(String(x[6]));
+        result[7].push(String(x[7]));
+        result[8].push(String(x[8]));
+        result[9].push(String(x[9]));
     }
     return result; 
 }
@@ -130,10 +134,10 @@ function get_vals_upcoming(json){
     var launch_data = {
         upcoming_launches: [{
             type: 'table',
-            columnwidth: [30, 30, 40, 30, 30, 30, 40],
+            columnwidth: [6, 30, 34, 20, 20, 20, 30, 40, 12],
             header: {
-                values: [["Flight Number"], ["Mission Name"], ["Launch Date"],
-                			["Cargo"], ["Cargo Weight"], ["Cargo Owner"], ["Launch Site"]],
+                values: [["#"], ["Mission Name"], ["Launch Date"], ["Vehicle"],
+                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"], ["Video"]],
                 align: "center",
                 height: 40,
                 line: {width: 4, color: 'black'},
@@ -173,10 +177,10 @@ function get_vals_past(json){
     var launch_data = {
         upcoming_launches: [{
             type: 'table',
-            columnwidth: [30, 30, 40, 30, 30, 30, 40],
+            columnwidth: [6, 30, 34, 20, 20, 20, 30, 40, 12],
             header: {
-                values: [["Flight Number"], ["Mission Name"], ["Launch Date"],
-                			["Cargo"], ["Cargo Weight"], ["Cargo Owner"], ["Launch Site"]],
+                values: [["#"], ["Mission Name"], ["Launch Date"], ["Vehicle"],
+                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"], ["Video"]],
                 align: "center",
                 height: 40,
                 line: {width: 4, color: 'black'},
@@ -217,10 +221,10 @@ function get_vals_latest(json){
     var launch_data = {
         upcoming_launches: [{
             type: 'table',
-            columnwidth: [30, 30, 40, 30, 30, 30, 40],
+            columnwidth: [6, 30, 34, 20, 20, 20, 30, 40, 12],
             header: {
-                values: [["Flight Number"], ["Mission Name"], ["Launch Date"],
-                			["Cargo"], ["Cargo Weight"], ["Cargo Owner"], ["Launch Site"]],
+                values: [["#"], ["Mission Name"], ["Launch Date"], ["Vehicle"],
+                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"], ["Video"]],
                 align: "center",
                 height: 40,
                 line: {width: 4, color: 'black'},
@@ -262,10 +266,10 @@ function get_vals_allPast(json){
     var launch_data = {
         upcoming_launches: [{
             type: 'table',
-            columnwidth: [30, 30, 45, 30, 30, 30, 40],
+            columnwidth: [6, 30, 40, 20, 30, 20, 30, 40, 12],
             header: {
-                values: [["Flight Number"], ["Mission Name"], ["Launch Date"],
-                			["Cargo"], ["Cargo Weight"], ["Cargo Owner"], ["Launch Site"]],
+                values: [["#"], ["Mission Name"], ["Launch Date"], ["Vehicle"],
+                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"], ["Video"]],
                 align: "center",
                 height: 40,
                 line: {width: 4, color: 'black'},
@@ -306,10 +310,10 @@ function get_vals_allPast_failed(json){
     var launch_data = {
         upcoming_launches: [{
             type: 'table',
-            columnwidth: [30, 30, 50, 30, 30, 30, 30,100],
+            columnwidth: [6, 30, 40, 20, 20, 20, 30, 30, 100, 12],
             header: {
-                values: [["Flight Number"], ["Mission Name"], ["Launch Date"],
-                			["Cargo"], ["Cargo Weight"], ["Cargo Owner"], ["Launch Site"], ["Details"]],
+                values: [["#"], ["Mission Name"], ["Launch Date"], ["Vehicle"],
+                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"], ["Details"], ["Video"]],
                 align: "center",
                 height: 40,
                 line: {width: 4, color: 'black'},

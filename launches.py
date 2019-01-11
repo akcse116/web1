@@ -34,6 +34,11 @@ def get_launch_data(url):
             time = datetime.datetime.strptime(mission["launch_date_utc"], "%Y-%m-%dT%H:%M:%S.%fZ")
             temp.append(time.strftime("%a %x %X"))
         
+        if mission["rocket"]["rocket_name"] == None:
+            temp.append('undisclosed')
+        else:
+            temp.append(mission["rocket"]["rocket_name"])
+        
         if mission["rocket"]["second_stage"]["payloads"][0]["payload_type"] == None:
             temp.append('undisclosed')
         else:
@@ -53,7 +58,13 @@ def get_launch_data(url):
             temp.append('undisclosed')
         else:
             temp.append(mission["launch_site"]["site_name_long"])
-            
+        
+        if mission["links"]["video_link"] == None:
+            temp.append('--')
+        else:
+            link = mission["links"]["video_link"]
+            temp.append("<a href=\"" + link + "\">Link</a>")
+        
         launches.append(temp)
     return json.dumps(launches)
 
@@ -83,6 +94,11 @@ def get_launch_data_past_sort(url):
                 time = datetime.datetime.strptime(mission["launch_date_utc"], "%Y-%m-%dT%H:%M:%S.%fZ")
                 temp.append(time.strftime("%a %x %X"))
             
+            if mission["rocket"]["rocket_name"] == None:
+                temp.append('undisclosed')
+            else:
+                temp.append(mission["rocket"]["rocket_name"])
+            
             if mission["rocket"]["second_stage"]["payloads"][0]["payload_type"] == None:
                 temp.append('undisclosed')
             else:
@@ -102,7 +118,13 @@ def get_launch_data_past_sort(url):
                 temp.append('undisclosed')
             else:
                 temp.append(mission["launch_site"]["site_name_long"])
-                
+            
+            if mission["links"]["video_link"] == None:
+                temp.append('--')
+            else:
+                link = mission["links"]["video_link"]
+                temp.append("<a href=\"" + link + "\">Link</a>")
+            
             launches.append(temp)
     launches.reverse()
     return json.dumps(launches)
@@ -130,6 +152,11 @@ def get_latest_launch_data(url):
         time = datetime.datetime.strptime(c["launch_date_utc"], "%Y-%m-%dT%H:%M:%S.%fZ")
         temp.append(time.strftime("%a %x %X"))
     
+    if c["rocket"]["rocket_name"] == None:
+        temp.append('undisclosed')
+    else:
+        temp.append(c["rocket"]["rocket_name"])
+    
     if c["rocket"]["second_stage"]["payloads"][0]["payload_type"] == None:
             temp.append('undisclosed')
     else:
@@ -149,6 +176,12 @@ def get_latest_launch_data(url):
             temp.append('undisclosed')
     else:
         temp.append(c["launch_site"]["site_name_long"])
+    
+    if c["links"]["video_link"] == None:
+        temp.append('--')
+    else:
+        link = c["links"]["video_link"]
+        temp.append("<a href=\"" + link + "\">Link</a>")
     
     launches.append(temp)
     return json.dumps(launches)
@@ -179,6 +212,11 @@ def get_failed_launches(url):
                 time = datetime.datetime.strptime(mission["launch_date_utc"], "%Y-%m-%dT%H:%M:%S.%fZ")
                 temp.append(time.strftime("%a %x %X"))
             
+            if mission["rocket"]["rocket_name"] == None:
+                temp.append('undisclosed')
+            else:
+                temp.append(mission["rocket"]["rocket_name"])
+            
             if mission["rocket"]["second_stage"]["payloads"][0]["payload_type"] == None:
                 temp.append('undisclosed')
             else:
@@ -203,7 +241,13 @@ def get_failed_launches(url):
                 temp.append('undisclosed')
             else:
                 temp.append(mission["details"])
-                
+            
+            if mission["links"]["video_link"] == None:
+                temp.append('--')
+            else:
+                link = mission["links"]["video_link"]
+                temp.append("<a href=\"" + link + "\">Link</a>")
+            
             launches.append(temp)
     return json.dumps(launches)
 
@@ -226,3 +270,6 @@ def launch_locations(url):
         if mission["launch_site"]["site_name"] == 'KSC LC 39A':
             kennedy += 1
     return json.dumps([atoll, canaveral, vandenberg, kennedy])
+
+
+print(get_latest_launch_data(url4))
