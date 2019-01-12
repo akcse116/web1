@@ -28,6 +28,12 @@ def get_launch_data(url):
         else:
             temp.append(mission["mission_name"])
         
+        if mission["links"]["video_link"] == None:
+            temp.append('--')
+        else:
+            link = mission["links"]["video_link"]
+            temp.append("<a href=\"" + link + "\">Link</a>")
+        
         if mission["launch_date_utc"] == None:
             temp.append('undisclosed')
         else:
@@ -59,12 +65,6 @@ def get_launch_data(url):
         else:
             temp.append(mission["launch_site"]["site_name_long"])
         
-        if mission["links"]["video_link"] == None:
-            temp.append('--')
-        else:
-            link = mission["links"]["video_link"]
-            temp.append("<a href=\"" + link + "\">Link</a>")
-        
         launches.append(temp)
     return json.dumps(launches)
 
@@ -87,6 +87,12 @@ def get_launch_data_past_sort(url):
                 temp.append('undisclosed')
             else:
                 temp.append(mission["mission_name"])
+            
+            if mission["links"]["video_link"] == None:
+                temp.append('--')
+            else:
+                link = mission["links"]["video_link"]
+                temp.append("<a href=\"" + link + "\">Link</a>")
             
             if mission["launch_date_utc"] == None:
                 temp.append('undisclosed')
@@ -119,12 +125,6 @@ def get_launch_data_past_sort(url):
             else:
                 temp.append(mission["launch_site"]["site_name_long"])
             
-            if mission["links"]["video_link"] == None:
-                temp.append('--')
-            else:
-                link = mission["links"]["video_link"]
-                temp.append("<a href=\"" + link + "\">Link</a>")
-            
             launches.append(temp)
     launches.reverse()
     return json.dumps(launches)
@@ -145,6 +145,12 @@ def get_latest_launch_data(url):
             temp.append('undisclosed')
     else:
         temp.append(c["mission_name"])
+    
+    if c["links"]["video_link"] == None:
+        temp.append('--')
+    else:
+        link = c["links"]["video_link"]
+        temp.append("<a href=\"" + link + "\">Link</a>")
     
     if c["launch_date_utc"] == None:
             temp.append('undisclosed')
@@ -177,12 +183,6 @@ def get_latest_launch_data(url):
     else:
         temp.append(c["launch_site"]["site_name_long"])
     
-    if c["links"]["video_link"] == None:
-        temp.append('--')
-    else:
-        link = c["links"]["video_link"]
-        temp.append("<a href=\"" + link + "\">Link</a>")
-    
     launches.append(temp)
     return json.dumps(launches)
 
@@ -205,6 +205,12 @@ def get_failed_launches(url):
                 temp.append('undisclosed')
             else:
                 temp.append(mission["mission_name"])
+            
+            if mission["links"]["video_link"] == None:
+                temp.append('--')
+            else:
+                link = mission["links"]["video_link"]
+                temp.append("<a href=\"" + link + "\">Link</a>")
             
             if mission["launch_date_utc"] == None:
                 temp.append('undisclosed')
@@ -241,12 +247,6 @@ def get_failed_launches(url):
                 temp.append('undisclosed')
             else:
                 temp.append(mission["details"])
-            
-            if mission["links"]["video_link"] == None:
-                temp.append('--')
-            else:
-                link = mission["links"]["video_link"]
-                temp.append("<a href=\"" + link + "\">Link</a>")
             
             launches.append(temp)
     return json.dumps(launches)

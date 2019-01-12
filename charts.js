@@ -134,10 +134,10 @@ function get_vals_upcoming(json){
     var launch_data = {
         upcoming_launches: [{
             type: 'table',
-            columnwidth: [6, 30, 34, 20, 20, 20, 30, 40, 12],
+            columnwidth: [6, 30, 12, 34, 20, 20, 20, 30, 40],
             header: {
-                values: [["#"], ["Mission Name"], ["Launch Date"], ["Vehicle"],
-                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"], ["Video"]],
+                values: [["#"], ["Mission Name"], ["Video"], ["Launch Date"], ["Vehicle"],
+                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"]],
                 align: "center",
                 height: 40,
                 line: {width: 4, color: 'black'},
@@ -156,7 +156,7 @@ function get_vals_upcoming(json){
         layout: {
             title: 'Next 10 Launches',
             autosize: true,
-            height: 740,
+            height: 700,
             margin: {
                 l: 10,
                 r: 10,
@@ -177,10 +177,10 @@ function get_vals_past(json){
     var launch_data = {
         upcoming_launches: [{
             type: 'table',
-            columnwidth: [6, 30, 34, 20, 20, 20, 30, 40, 12],
+            columnwidth: [6, 30, 12, 34, 20, 20, 20, 30, 40],
             header: {
-                values: [["#"], ["Mission Name"], ["Launch Date"], ["Vehicle"],
-                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"], ["Video"]],
+                values: [["#"], ["Mission Name"], ["Video"], ["Launch Date"], ["Vehicle"],
+                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"]],
                 align: "center",
                 height: 40,
                 line: {width: 4, color: 'black'},
@@ -221,10 +221,10 @@ function get_vals_latest(json){
     var launch_data = {
         upcoming_launches: [{
             type: 'table',
-            columnwidth: [6, 30, 34, 20, 20, 20, 30, 40, 12],
+            columnwidth: [6, 30, 12, 34, 20, 20, 20, 30, 40],
             header: {
-                values: [["#"], ["Mission Name"], ["Launch Date"], ["Vehicle"],
-                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"], ["Video"]],
+                values: [["#"], ["Mission Name"], ["Video"], ["Launch Date"], ["Vehicle"],
+                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"]],
                 align: "center",
                 height: 40,
                 line: {width: 4, color: 'black'},
@@ -244,7 +244,7 @@ function get_vals_latest(json){
             title: 'Latest SpaceX Mission',
             title_color: "#f2f2f2",
             autosize: true,
-            height: 200,
+            height: 180,
             margin: {
                 l: 10,
                 r: 10,
@@ -266,10 +266,10 @@ function get_vals_allPast(json){
     var launch_data = {
         upcoming_launches: [{
             type: 'table',
-            columnwidth: [6, 30, 40, 20, 30, 20, 30, 40, 12],
+            columnwidth: [6, 30, 12, 40, 20, 30, 20, 30, 40],
             header: {
-                values: [["#"], ["Mission Name"], ["Launch Date"], ["Vehicle"],
-                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"], ["Video"]],
+                values: [["#"], ["Mission Name"], ["Video"], ["Launch Date"], ["Vehicle"],
+                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"]],
                 align: "center",
                 height: 40,
                 line: {width: 4, color: 'black'},
@@ -288,7 +288,7 @@ function get_vals_allPast(json){
         layout: {
             title: 'Full Launch Mission History     (Scroll to see all)',
             autosize: true,
-            height: 3700,
+            height: 4500,
             margin: {
                 l: 10,
                 r: 10,
@@ -310,10 +310,10 @@ function get_vals_allPast_failed(json){
     var launch_data = {
         upcoming_launches: [{
             type: 'table',
-            columnwidth: [6, 30, 40, 20, 20, 20, 30, 30, 100, 12],
+            columnwidth: [6, 30, 12, 40, 20, 20, 20, 30, 30, 100],
             header: {
-                values: [["#"], ["Mission Name"], ["Launch Date"], ["Vehicle"],
-                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"], ["Details"], ["Video"]],
+                values: [["#"], ["Mission Name"], ["Video"], ["Launch Date"], ["Vehicle"],
+                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"], ["Details"]],
                 align: "center",
                 height: 40,
                 line: {width: 4, color: 'black'},
@@ -332,7 +332,7 @@ function get_vals_allPast_failed(json){
         layout: {
             title: 'Failed Missions',
             autosize: true,
-            height: 700,
+            height: 520,
             margin: {
                 l: 10,
                 r: 10,
@@ -370,6 +370,13 @@ function launch_site_pie(json){
             height: 600,
             width: 1000,
             color: 'white',
+            margin: {
+                l: 20,
+                r: 140,
+                b: 80,
+                t: 80,
+                pad: 0
+            },
             paper_bgcolor: '#000000',
             plot_bgcolor: '#000000'
         }
