@@ -1,18 +1,19 @@
 <!doctype html>
 <html lang="en">
 
-<!--
-            H   H  EEEEE    A    DDDD
-            H   H  E       A A   D   D
-            HHHHH  EEEE   A   A  D   D
-            H   H  E      A A A  D   D
-            H   H  EEEEE  A   A  DDDD
--->
-
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132386195-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-132386195-1');
+        </script>
+
     <!--  color palette source -- http://paletton.com/#uid=7120u0kw0w0jvDaoOy4y4oODajv  -->
     
-    <!-- TITLE INFO -->
     <title>Launch hub - HOME - Stay updated on SpaceX launches so you never miss outagain.</title>
     <!--  TITLE ICON -->
     <link rel="icon" type="icon" href="/tabimg" sizes="32x32" />
@@ -29,7 +30,7 @@
     <!-- Page JAVASCRIPT REF -->
     <script src="/charts"></script>
     
-    <!-- CSS -->
+    
     <style>
         body {
             text-align: center;
@@ -71,6 +72,9 @@
             text-align: center;
             font-family: arial, helvetica;
             
+        }
+        h4 {
+            color: #ffb200;
         }
         .tframe {
             margin: auto;
@@ -156,6 +160,23 @@
             font-size:80%;
             text-transform:uppercase;
         }
+        #subscribe {
+            background-color: black;
+            color: white;
+            font-size: 90%;
+            font-family: helvetica;
+            width: 50%;
+            margin: auto;
+            padding: .7%;
+            border: 2px #fbb200 solid;
+            border-radius: 15px;
+        }
+        #subscribe:hover {
+            border: 4px #00ff00 solid;
+        }
+        #email {
+            margin: .8%;
+        }
         a {
             padding: 0;
             margin: 0;
@@ -192,6 +213,7 @@
         #active:hover {
             color: #FFDB00;
         }
+        
     </style>
   </head>
   
@@ -228,49 +250,58 @@
             </div>
         </header>
         <div id="main">
-        <hr>
-        <div class="tframe">
-        <p>Providing up to date information regarding SpaceX missions.<br>Past and future launch data and detail are listed as they become available.</p>
+            <hr>
+            <div class="tframe">
+                <p>Providing up to date information regarding SpaceX missions.<br>Past and future launch data and detail are listed as they become available.</p>
+            </div>
+            <hr>
+            <div id="charts">
+                <div id="title_trim">
+                    <h1 id="banner">LATEST LAUNCH</h1>
+                </div>
+                <hr>
+                <h3>Get up to speed with the latest event.<br>Below are details of the lastest SpaceX launch.</h3>
+                <div class="frame">
+                    <div class="trim">
+                        <div id='latest_chart' class="chart"></div>
+                    </div>
+                </div>
+                <hr>
+                <hr>
+                <h1>UPCOMING LAUNCHES</h1>
+                <div class="frame">
+                    <div class="trim">
+                        <div id='upcoming_chart' class="chart"></div>
+                    </div>
+                </div>
+                <hr>
+                <hr>
+                <h1>PAST LAUNCHS</h1>
+                <h3>For the full launch history see the <a href="LH">"ALL LAUNCHES"</a> page</h3>
+                <div class="frame">
+                    <div class="trim">
+                        <div id="past_chart" class="chart"></div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div id="subscribe">
+                <h4>Subscribe for updates</h4>    
+                <form method="post" action="">E-mail:<input id="email" type="email" name="email" autocomplete="off" placeholder="launch_fan@service.net">
+                <button type="submit">Subscribe</button>
+                <br>
+            </form>
+            </div>
+            <hr>
+            <div class="pframe">
+                <img id="rocket" src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.trbimg.com%2Fimg-5a7a877e%2Fturbine%2Fct-spacex-falcon-heavy-rocket-launch-20180206&f=1" alt="rocket launch" >
+            </div>
         </div>
         <hr>
-        <div id="charts">
-        <div id="title_trim">
-        <h1 id="banner">LATEST LAUNCH</h1>
-        </div>
-        <hr>
-        <h3>Get up to speed with the latest event.<br>Below are details of the lastest SpaceX launch.</h3>
-        <div class="frame">
-        <div class="trim">
-        <div id='latest_chart' class="chart"></div>
-        </div>
-        </div>
-        <hr>
-        <hr>
-        <h1>UPCOMING LAUNCHES</h1>
-        <div class="frame">
-        <div class="trim">
-        <div id='upcoming_chart' class="chart"></div>
-        </div>
-        </div>
-        <hr>
-        <hr>
-        <h1>PAST LAUNCHS</h1>
-        <h3>For the full launch history see the <a href="LH">"ALL LAUNCHES"</a> page</h3>
-        <div class="frame">
-        <div class="trim">
-        <div id="past_chart" class="chart"></div>
-        </div>
-        </div>
-        </div>
-        <hr>
-        <div class="pframe">
-        <img id="rocket" src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.trbimg.com%2Fimg-5a7a877e%2Fturbine%2Fct-spacex-falcon-heavy-rocket-launch-20180206&f=1" alt="rocket launch" >
-        </div>
-    </div>
-    <hr>
-    <footer>
-        <a href="#logo">Back To Top ^</a>
-    </footer>
+        <footer>
+            <a href="#logo">Back To Top ^</a>
+            <p>Copyright &copy; 2018</p>
+        </footer>
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -279,13 +310,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     
   </body>
-
-<!-- 
-            BBBB    OOO   DDDD   Y   Y
-            B   B  O   O  D   D   Y Y
-            BBBB   O   O  D   D    Y
-            B   B  O   O  D   D    Y  
-            BBBB    OOO   DDDD     Y  
--->
-
 </html>

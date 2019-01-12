@@ -288,7 +288,7 @@ function get_vals_allPast(json){
         layout: {
             title: 'Full Launch Mission History     (Scroll to see all)',
             autosize: true,
-            height: 4500,
+            height: 4800,
             margin: {
                 l: 10,
                 r: 10,
@@ -332,7 +332,7 @@ function get_vals_allPast_failed(json){
         layout: {
             title: 'Failed Missions',
             autosize: true,
-            height: 520,
+            height: 600,
             margin: {
                 l: 10,
                 r: 10,

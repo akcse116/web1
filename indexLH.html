@@ -10,6 +10,16 @@
 -->
 
   <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132386195-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-132386195-1');
+    </script>
+
     <!-- TITLE INFO -->
     <title>Launch hub - LAUNCH HISTORY</title>
     <link rel="icon" type="icon" href="/tabimg" sizes="32x32" /><!--  TITLE ICON -->
@@ -80,6 +90,9 @@
         text-align: center;
         font-family: arial, helvetica;
         font-size: 83%;
+    }
+    h4 {
+        color: #ffb200;
     }
     p {
         color: white;
@@ -158,6 +171,23 @@
         float: none;
         font-size:80%;
         text-transform:uppercase;
+    }
+    #subscribe {
+        background-color: black;
+        color: white;
+        font-size: 90%;
+        font-family: helvetica;
+        width: 50%;
+        margin: auto;
+        padding: 1%;
+        border: 2px #fbb200 solid;
+        border-radius: 15px;
+    }
+    #subscribe:hover {
+        border: 4px #00ff00 solid;
+    }
+    #email {
+        margin: .8%;
     }
     a {
         color: inherit;
@@ -268,6 +298,14 @@
     <div id="site_pie_chart"></div>
     </div>
     <hr>
+    <div id="subscribe">
+        <h4>Subscribe for updates</h4>    
+        <form method="post" action="">E-mail:<input id="email" type="email" name="email" autocomplete="off" placeholder="launch_fan@service.net">
+        <button type="submit">Subscribe</button>
+        <br>
+        </form>
+    </div>
+    <hr>
     <div class="pframe">
     <img id="rocket" src="https://amp.businessinsider.com/images/5894f8056e09a8f2208b4f49-1136-568.jpg" alt="rocket_img">
     </div>
@@ -280,13 +318,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     
   </body>
-
-<!-- 
-            BBBB    OOO   DDDD   Y   Y
-            B   B  O   O  D   D   Y Y
-            BBBB   O   O  D   D    Y
-            B   B  O   O  D   D    Y  
-            BBBB    OOO   DDDD     Y  
--->
-
 </html>

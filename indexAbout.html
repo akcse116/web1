@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
-
-<!--
-            H   H  EEEEE    A    DDDD
-            H   H  E       A A   D   D
-            HHHHH  EEEE   A   A  D   D
-            H   H  E      A A A  D   D
-            H   H  EEEEE  A   A  DDDD
--->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132386195-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-132386195-1');
+    </script>
 
   <head>
     <!-- TITLE INFO -->
@@ -89,7 +90,7 @@
     #cbtn {
         font-size: 75%;
         padding: 1%;
-        margin: .5%;
+        margin: 1%;
         background-color: #000000;
         color: #00ff00;
         font-family: arial, halvetica;
@@ -109,10 +110,29 @@
         background-color: white;
         border-radius: 4px;
         }
+    .tframe2 {
+        margin: auto;
+        width: 40%;
+        padding: .2%;
+        background-color: white;
+        border-radius: 4px;
+    }
     #p1 {
         color: white;
         background-color: #001a33;
         font-size: 60%;
+        width: 100%;
+        opacity: 1.0;
+        text-align: center;
+        font-family: arial, helvetica;
+        margin: auto;
+        padding: .6%;
+        border-radius: 4px;
+    }
+    #p2 {
+        color: white;
+        background-color: #001a33;
+        font-size: 40%;
         width: 100%;
         opacity: 1.0;
         text-align: center;
@@ -156,7 +176,11 @@
         width: 40%;
         margin: auto;
         padding: .7%;
+        border: 2px #fbb200 solid;
         border-radius: 15px;
+    }
+    #subscribe:hover {
+        border: 4px #00ff00 solid;
     }
     #email {
         margin: .8%;
@@ -225,13 +249,21 @@
     
         <div class="tframe">
             <div id="p1">
-            <p>Launch hub is a supporter of SpaceX and their ventures as well as all scientific 
-            and technological advancement. We are passionate about making a positive impact on 
-            the world and hope that through our contributions we can inform and inspire the world 
-            the way SpaceX inspires us.<br>We will continue to expand and improve our service. 
-            Feel free to contact us, we welcome your feedback.
-            </p>
+                <p>Launch hub is a supporter of SpaceX and their ventures as well as all scientific 
+                and technological advancement. We are passionate about making a positive impact on 
+                the world and hope that through our contributions we can inform and inspire the world 
+                the way SpaceX inspires us.<br><br>We will continue to expand and improve our service. 
+                Feel free to contact us, we welcome your feedback.
+                </p>
             <button id="cbtn" onclick="window.location.href='https://occupylaunchhub.com/contact'">CONTACT</button>
+            </div>
+        </div>
+        <br>
+        <div class="tframe2">
+            <div id="p2">
+                <p>
+                    Launch hub is not affiliated with SpaceX.<br>Data powered by SpaceX-API
+                </p>
             </div>
         </div>
     </div>
@@ -256,13 +288,4 @@
             <p>Copyright &copy; 2018</p>
         </footer>
   </body>
-
-<!-- 
-            BBBB    OOO   DDDD   Y   Y
-            B   B  O   O  D   D   Y Y
-            BBBB   O   O  D   D    Y
-            B   B  O   O  D   D    Y  
-            BBBB    OOO   DDDD     Y  
--->
-
 </html>
