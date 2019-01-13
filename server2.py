@@ -23,42 +23,42 @@ url4 = "https://api.spacexdata.com/v3/launches/latest"
 @route('/')
 def get_index():
     count()
-    return static_file("indexHome.html", root='')
+    return static_file("indexHome.html", root='FRONT/')
 
 
 @route('/about')
 def get_indexAbout():
-    return static_file("indexAbout.html", root='')
+    return static_file("indexAbout.html", root='FRONT/')
 
 
 @route('/LH')
 def get_indexLH():
-    return static_file("indexLH.html", root='')
+    return static_file("indexLH.html", root='FRONT/')
 
 
 @route('/failed_page')
 def get_indexFail():
-    return static_file("indexFail.html", root='')
+    return static_file("indexFail.html", root='FRONT/')
 
 
 @route('/info')
 def get_indexInfo():
-    return static_file("indexInfo.html", root='')
+    return static_file("indexInfo.html", root='FRONT/')
 
 
 @route('/contact')
 def get_contact():
-    return static_file("contact.html", root='')
+    return static_file("contact.html", root='FRONT/')
 
 
 @route('/robots.txt')
 def get_permission():
-    return static_file("robots.txt", root='')
+    return static_file("robots.txt", root='FRONT/')
 
 
 @route('/sitemap')
 def get_sitemap():
-    return static_file("sitemap.xml", root='')
+    return static_file("sitemap.xml", root='FRONT/')
 
 
 @error(404)
@@ -84,12 +84,12 @@ def background():
 
 @route('/tabimg')
 def favicon():
-    return static_file("LH favicon.png", root='')
+    return static_file("LH favicon.png", root='FRONT/')
 
 
 @route('/charts')
 def graphes():
-    return static_file("charts.js", root='')
+    return static_file("charts.js", root='FRONT/')
 
 
 # ********** END SUPPORT FILES **********
@@ -130,8 +130,24 @@ def get_site_count():
 # ********** POST **********
 
 
+@post('/')
+def do_submit1():
+    content = request.forms.get('email')
+    input_handling.add_email(content)
+    redirect('/')
+    return "Confirmed"
+
+
+@post('/LH')
+def do_submit2():
+    content = request.forms.get('email')
+    input_handling.add_email(content)
+    redirect('/LH')
+    return "Confirmed"
+
+
 @post('/about')
-def do_submit():
+def do_submit5():
     content = request.forms.get('email')
     input_handling.add_email(content)
     redirect('/about')
@@ -139,7 +155,7 @@ def do_submit():
 
 
 @post('/contact')
-def do_submit2():
+def do_contact1():
     name = request.forms.get('name')
     email = request.forms.get('email')
     message = request.forms.get('message')
