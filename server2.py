@@ -1,3 +1,8 @@
+#   ----------------------------------------
+#   server2.py is the server file for launch hub
+#   
+#   server runs on Bottle
+#   ----------------------------------------
 import urllib.request
 import requests
 import json
