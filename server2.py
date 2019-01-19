@@ -46,9 +46,9 @@ def get_indexFail():
     return static_file("indexFail.html", root='FRONT/')
 
 
-@route('/info')
+@route('/more')
 def get_indexInfo():
-    return static_file("indexInfo.html", root='FRONT/')
+    return static_file("indexMore.html", root='FRONT/')
 
 
 @route('/contact')
