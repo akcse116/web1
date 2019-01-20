@@ -79,7 +79,7 @@ def error404(error):
 
 @route('/LHlogo')
 def logo():
-    return static_file("logo3lh.png", root='FRONT/')
+    return static_file("logo4lh.png", root='FRONT/')
 
 
 @route('/pageBG')
