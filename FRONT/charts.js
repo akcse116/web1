@@ -1,6 +1,4 @@
-// ******** Main Functions ********
-
-// ******** HOME Page ********
+// ******** charts.js ********
 
 // Upcoming Table
 
@@ -16,7 +14,7 @@ function upcoming_table(){
         xhttp.onreadystatechange = function(){
             if (this.readyState === 4 && this.status === 200){
                 var launch_data = get_vals_upcoming(this.response);
-                Plotly.plot('upcoming_chart', launch_data.upcoming_launches, launch_data.layout);
+                Plotly.plot('upcoming_chart1', launch_data.upcoming_launches, launch_data.layout);
             }
         };
         xhttp.open("GET", "/upcoming");
@@ -108,6 +106,21 @@ function data_sort(raw_data){
     return result; 
 }
 
+// returns one entry
+function data_sort_1(raw_data){
+    var result = [ [], [], [], [], [], [], [], [], []];
+    result[0].push(String(raw_data[0][0]));
+    result[1].push(String(raw_data[0][1]));
+    result[2].push(String(raw_data[0][2]));
+    result[3].push(String(raw_data[0][3]));
+    result[4].push(String(raw_data[0][4]));
+    result[5].push(String(raw_data[0][5]));
+    result[6].push(String(raw_data[0][6]));
+    result[7].push(String(raw_data[0][7]));
+    result[8].push(String(raw_data[0][8]));
+    return result; 
+}
+
 
 // Sorting for fail table (additional list in result)
 function data_sort_2(raw_data){
@@ -170,6 +183,51 @@ function get_vals_upcoming(json){
     };
     return launch_data;
 }
+
+
+function get_vals_upcoming2(json){
+    var data = JSON.parse(json);
+    var cell_vals = data_sort_1(data);
+    var launch_data = {
+        upcoming_launches: [{
+            type: 'table',
+            columnwidth: [6, 30, 12, 34, 20, 20, 20, 30, 40],
+            header: {
+                values: [["#"], ["Mission Name"], ["Video"], ["Launch Date"], ["Vehicle"],
+                			["Cargo"], ["Weight"], ["Cargo Owner"], ["Launch Site"]],
+                align: "center",
+                height: 40,
+                line: {width: 4, color: 'black'},
+                fill: {color: "#ffb200"},
+                font: {family: "Arial", size: 18, color: "white"}
+            },
+            cells: {
+                values: cell_vals,
+                align: "center",
+                height: 30,
+                line: {color: "black", width: 4},
+                fill: {color: "#666699"},
+                font: {family: "Arial", size: 14, color: ["white"]}
+            }
+        }],
+        layout: {
+            title: 'Next Launch',
+            autosize: true,
+            height: 180,
+            margin: {
+                l: 10,
+                r: 10,
+                b: 10,
+                t: 50,
+                pad: 0
+            },
+            paper_bgcolor: '#000000',
+            plot_bgcolor: '#000000'
+        }
+    };
+    return launch_data;
+}
+
 
 function get_vals_past(json){
     var data = JSON.parse(json);
@@ -382,4 +440,12 @@ function launch_site_pie(json){
         }
     }
     return pie;
+}
+
+
+// *********** Document functions ***********
+
+function expand(element1, element2){
+    document.GetElementsByClassName(element1).visibility = hidden;
+    document.GetElementsByClassName(element2).visibility = visible;
 }
