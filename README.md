@@ -6,6 +6,3 @@
 - [x] :nut_and_bolt:Front end data is displayed using Javascript
 - [x] :beginner:A subscriber feature is implemented.
 - [x] :email:Messages can be sent to LaunchHub through a contact feature, an email alert is sent to the account contacts email when messages are sent to LaunchHub.
-
-
-:space_invader:This project will not function in its current state as the API seems to have been removed:space_invader:
