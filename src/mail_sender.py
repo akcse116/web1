@@ -5,9 +5,9 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 
-email_user = 'contact.launch.hub@gmail.com'
-email_password = 'Get.Pass.456'
-email_send = 'contact.launch.hub@gmail.com'
+email_user = 'contact.launch.hub@gmail.com' # Sender's email
+email_password = 'Get.Pass.456' # Sender's password. ENVIRONMENTAL VARIABLE RECOMMENDED, NEVER PUSH PASSWORDS TO GIT.
+email_send = 'contact.launch.hub@gmail.com' # Recipient's email
 
 
 def msg_builder(name, email, message):
